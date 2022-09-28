@@ -10,7 +10,7 @@ const User = () => {
                     <img src="https://avatars.githubusercontent.com/u/100690235?s=400&u=79b042e6dd06572650f3de77d1492b9abcf7bad6&v=4" alt="user pic" className='w-16 h-16 rounded-2xl' />
                 </div>
                 <div>
-                    <h3 className='text-xl font-medium text-truncate overflow-hidden '>Md. Adnan</h3>
+                    <h3 className='text-2xl font-medium'>Md. Adnan</h3>
                     <p className='text-slate-600'><FontAwesomeIcon icon={faLocationDot} /> Dhaka, Bangladesh</p>
                 </div>
             </div>
