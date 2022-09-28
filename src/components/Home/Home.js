@@ -6,12 +6,17 @@ import User from '../User/User';
 
 const Home = () => {
     const [exercises, setExercises] = useState([]);
+    const [exerciseTime, setExerciseTime] = useState(0);
+
 
     useEffect(() => {
         fetch('fakeData.json')
             .then(res => res.json())
             .then(data => setExercises(data))
     }, [])
+
+    const handleExerciseTime = time => setExerciseTime(exerciseTime + time)
+
 
     return (
         <div className='bg-slate-50 min-h-screen'>
@@ -20,7 +25,7 @@ const Home = () => {
                     <div className="logo text-red-500 font-bold uppercase text-4xl"><FontAwesomeIcon icon={faDumbbell} /> PRO-Active-club</div>
                     <h3 className="text-3xl font-semibold mt-10 mb-5">Select today’s exercise</h3>
                     <div className="exercise-container grid gap-5 lg:grid-cols-3 md:grid-cols-2 grid-cols-1">
-                        {exercises.map(exercise => <Exercise exercise={exercise} key={exercise.id}></Exercise>)}
+                        {exercises.map(exercise => <Exercise exercise={exercise} handleExerciseTime={handleExerciseTime} key={exercise.id}></Exercise>)}
                     </div>
                 </div>
                 <div className="xl:px-5 px-3 py-10 w-full bg-white">
@@ -41,7 +46,7 @@ const Home = () => {
                         <h3 className='text-2xl font-medium'>Exercise Details</h3>
                         <div className='flex justify-between bg-slate-100 rounded-xl p-5 mt-5'>
                             <span className='text-xl font-medium'>Exercise time</span>
-                            <span className='text-lg font-medium text-slate-500'>200 seconds</span>
+                            <span className='text-lg font-medium text-slate-500'>{exerciseTime} seconds</span>
                         </div>
                         <div className='flex justify-between bg-slate-100 rounded-xl p-5 mt-5'>
                             <span className='text-xl font-medium'>Break time</span>
