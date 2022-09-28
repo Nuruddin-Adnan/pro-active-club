@@ -1,6 +1,8 @@
 import React, { useEffect, useState } from 'react';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faDumbbell } from '@fortawesome/free-solid-svg-icons'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faDumbbell } from '@fortawesome/free-solid-svg-icons';
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 import Exercise from '../Exercise/Exercise';
 import User from '../User/User';
 
@@ -18,18 +20,31 @@ const Home = () => {
 
     const handleExerciseTime = time => setExerciseTime(exerciseTime + time);
 
-    const handleBreakTime = time => {
+    const handleBreakTime = (time) => {
         setBreakTime(time);
-        localStorage.setItem('break-time', time)
+        localStorage.setItem('break-time', time);
     };
 
     useEffect(() => {
         const storedBreakTime = localStorage.getItem('break-time');
         if (storedBreakTime) {
-            setExerciseTime(storedBreakTime);
+            setBreakTime(storedBreakTime);
         }
     }, [breakTime])
 
+    // push notification 
+    const notify = () => {
+        toast.success('Activity Completed', {
+            position: "top-right",
+            autoClose: 2000,
+            hideProgressBar: false,
+            closeOnClick: true,
+            pauseOnHover: true,
+            draggable: true,
+            progress: undefined,
+            theme: "colored"
+        });
+    };
 
     return (
         <div className='bg-slate-50 min-h-screen'>
@@ -67,9 +82,10 @@ const Home = () => {
                         </div>
                     </div>
 
-                    <button className='bg-red-500 hover:bg-red-600 text-white font-medium text-lg rounded-lg p-5 mt-16 w-full'>Activity Completed</button>
+                    <button onClick={notify} className='bg-red-500 hover:bg-red-600 text-white font-medium text-lg rounded-lg p-5 mt-16 w-full'>Activity Completed</button>
                 </div>
             </div>
+            <ToastContainer />
         </div>
     );
 };
