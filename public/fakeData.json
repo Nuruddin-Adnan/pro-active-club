@@ -1,41 +1,47 @@
 [
     {
         "id": 1,
+        "img": "https://themetechmount.com/html/gimmer/images/post/post-1-700x635.jpg",
         "activityName": "Strength",
         "description": "New challenge for body and mind since they have to adapt to fun workout.",
         "ageLimit": "20-25",
         "time": 20
     },
     {
-        "id": 1,
+        "id": 2,
+        "img": "https://themetechmount.com/html/gimmer/images/post/post-3-700x635.jpg",
         "activityName": "Dumble",
         "description": "Cardio theater makes exercise more fun with a personalized entertainment.",
         "ageLimit": "18-40",
         "time": 30
     },
     {
-        "id": 1,
+        "id": 3,
+        "img": "https://themetechmount.com/html/gimmer/images/post/post-4-700x635.jpg",
         "activityName": "Family fitness",
         "description": "Cardio deck boasts a full range of latest equipment for your entertainment.",
         "ageLimit": "30-45",
         "time": 25
     },
     {
-        "id": 1,
+        "id": 4,
+        "img": "https://themetechmount.com/html/gimmer/images/post/post-5-700x635.jpg",
         "activityName": "Healthy lifestyle",
         "description": "Cardio theater makes exercise more fun with a personalized entertainment.",
         "ageLimit": "25-35",
         "time": 50
     },
     {
-        "id": 1,
+        "id": 5,
+        "img": "https://themetechmount.com/html/gimmer/images/post/post-3-700x635.jpg",
         "activityName": "Fun Workouts",
         "description": "New challenge for body and mind since they have to adapt to fun workout.",
         "ageLimit": "15-25",
         "time": 40
     },
     {
-        "id": 1,
+        "id": 6,
+        "img": "https://themetechmount.com/html/gimmer/images/post/post-2-700x635.jpg",
         "activityName": "muscle building",
         "description": "New challenge for body and mind since they have to adapt to fun workout.",
         "ageLimit": "20-30",
