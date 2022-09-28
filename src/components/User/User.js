@@ -18,15 +18,15 @@ const User = () => {
             <div className='bg-slate-100 rounded-xl p-4 mt-8'>
                 <div className="grid grid-cols-3 gap-3 text-center">
                     <div>
-                        <h3 className='text-2xl font-bold'>75<sub className='text-slate-500 bottom-0 font-normal'>kg</sub></h3>
+                        <h3 className='text-2xl font-bold'>60<sub className='text-slate-500 bottom-0 font-normal'>kg</sub></h3>
                         <h4 className='text-xl text-slate-500'>Weight</h4>
                     </div>
                     <div>
-                        <h3 className='text-2xl font-bold'>6.5</h3>
+                        <h3 className='text-2xl font-bold'>5.5</h3>
                         <h4 className='text-xl text-slate-500'>Height</h4>
                     </div>
                     <div>
-                        <h3 className='text-2xl font-bold'>25<sub className='text-slate-500 bottom-0 font-normal'>yrs</sub></h3>
+                        <h3 className='text-2xl font-bold'>30<sub className='text-slate-500 bottom-0 font-normal'>yrs</sub></h3>
                         <h4 className='text-xl text-slate-500'>Age</h4>
                     </div>
                 </div>

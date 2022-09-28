@@ -7,6 +7,7 @@ import User from '../User/User';
 const Home = () => {
     const [exercises, setExercises] = useState([]);
     const [exerciseTime, setExerciseTime] = useState(0);
+    const [breakTime, setBreakTime] = useState(0);
 
 
     useEffect(() => {
@@ -15,7 +16,19 @@ const Home = () => {
             .then(data => setExercises(data))
     }, [])
 
-    const handleExerciseTime = time => setExerciseTime(exerciseTime + time)
+    const handleExerciseTime = time => setExerciseTime(exerciseTime + time);
+
+    const handleBreakTime = time => {
+        setBreakTime(time);
+        localStorage.setItem('break-time', time)
+    };
+
+    useEffect(() => {
+        const storedBreakTime = localStorage.getItem('break-time');
+        if (storedBreakTime) {
+            setExerciseTime(storedBreakTime);
+        }
+    }, [breakTime])
 
 
     return (
@@ -34,11 +47,11 @@ const Home = () => {
                     <div className='add-a-break mt-10'>
                         <h3 className='text-xl font-medium'>Add A Break</h3>
                         <div className='bg-slate-100 rounded-xl p-4 mt-5 text-center grid grid-cols-5'>
-                            <button className='bg-white w-14 h-14 rounded-full font-medium mx-auto'>10s</button>
-                            <button className='bg-white w-14 h-14 rounded-full font-medium mx-auto'>20s</button>
-                            <button className='bg-white w-14 h-14 rounded-full font-medium mx-auto'>30s</button>
-                            <button className='bg-white w-14 h-14 rounded-full font-medium mx-auto'>40s</button>
-                            <button className='bg-white w-14 h-14 rounded-full font-medium mx-auto'>50s</button>
+                            <button onClick={() => handleBreakTime(10)} className='bg-white w-14 h-14 rounded-full font-medium mx-auto'>10s</button>
+                            <button onClick={() => handleBreakTime(20)} className='bg-white w-14 h-14 rounded-full font-medium mx-auto'>20s</button>
+                            <button onClick={() => handleBreakTime(30)} className='bg-white w-14 h-14 rounded-full font-medium mx-auto'>30s</button>
+                            <button onClick={() => handleBreakTime(40)} className='bg-white w-14 h-14 rounded-full font-medium mx-auto'>40s</button>
+                            <button onClick={() => handleBreakTime(50)} className='bg-white w-14 h-14 rounded-full font-medium mx-auto'>50s</button>
                         </div>
                     </div>
 
@@ -50,7 +63,7 @@ const Home = () => {
                         </div>
                         <div className='flex justify-between bg-slate-100 rounded-xl p-5 mt-5'>
                             <span className='text-xl font-medium'>Break time</span>
-                            <span className='text-lg font-medium text-slate-500'>15  seconds</span>
+                            <span className='text-lg font-medium text-slate-500'>{breakTime}  seconds</span>
                         </div>
                     </div>
 
