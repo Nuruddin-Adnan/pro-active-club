@@ -52,7 +52,7 @@ const Home = () => {
         <div className='bg-slate-50 min-h-screen'>
             <div className="grid xl:grid-cols-4 grid-cols-1">
                 <div className="col-span-3 2xl:px-40 md:px-10 px-5 lg:py-24 py-5">
-                    <div className="logo text-red-500 font-bold uppercase text-4xl"><FontAwesomeIcon icon={faDumbbell} /> PRO-Active-club</div>
+                    <div className="logo text-red-500 font-bold uppercase xl:text-4xl text-3xl"><FontAwesomeIcon icon={faDumbbell} /> PRO-Active-club</div>
                     <h3 className="text-3xl font-semibold mt-10 mb-5">Select today’s exercise</h3>
                     <div className="exercise-container grid gap-5 lg:grid-cols-3 md:grid-cols-2 grid-cols-1">
                         {exercises.map(exercise => <Exercise exercise={exercise} handleExerciseTime={handleExerciseTime} key={exercise.id}></Exercise>)}
