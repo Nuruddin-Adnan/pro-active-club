@@ -5,7 +5,7 @@ import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import Exercise from '../Exercise/Exercise';
 import User from '../User/User';
-import QuestionAnswer from '../../QuestionAnswer/QuestionAnswer';
+import QuestionAnswer from '../QuestionAnswer/QuestionAnswer';
 
 const Home = () => {
     const [exercises, setExercises] = useState([]);
