@@ -18,7 +18,7 @@ const Exercise = ({ exercise, handleExerciseTime }) => {
             <h3 className='text-2xl font-semibold py-4'>{activityName}</h3>
             <p className='text-base text-slate-500 font-normal'>{description}</p>
             <p className='text-base pt-3 pb-1'>For Age: <span className='font-medium'>{ageLimit}</span></p>
-            <p className='text-base'>Time required :  <span className='font-medium'>{time}</span></p>
+            <p className='text-base'>Time required :  <span className='font-medium'>{time}s</span></p>
 
             {
                 buttonAddedStatus === false ?
